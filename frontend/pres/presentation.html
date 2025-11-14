@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MAX WebApp · презентация</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #edf1f8;
+        --card: #ffffff;
+        --surface: #f6f8fb;
+        --text: #101728;
+        --muted: #5b657c;
+        --accent: #2563eb;
+        --border: rgba(15, 23, 42, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .deck {
+        width: 1920px;
+        margin: 0 auto;
+        padding: 80px 0;
+        background: linear-gradient(180deg, #f5f8ff 0%, #e7ecf7 100%);
+      }
+      .slide {
+        width: 1600px;
+        height: 900px;
+        margin: 0 auto 80px;
+        border-radius: 40px;
+        border: 1px solid var(--border);
+        background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), rgba(255, 255, 255, 0)) var(--card);
+        box-shadow: 0 35px 90px rgba(15, 23, 42, 0.12);
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      h1,
+      h2 {
+        margin: 0;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+      }
+      h1 {
+        font-size: 64px;
+      }
+      h2 {
+        font-size: 48px;
+      }
+      p {
+        margin: 0;
+        font-size: 20px;
+        color: var(--muted);
+      }
+      .pill {
+        align-self: flex-start;
+        padding: 10px 26px;
+        border-radius: 999px;
+        border: 1px solid rgba(37, 99, 235, 0.25);
+        background: rgba(37, 99, 235, 0.08);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: var(--accent);
+      }
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+      .grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid.auto {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      }
+      .card h3 {
+        margin: 0;
+        font-size: 26px;
+      }
+      .card ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+        font-size: 18px;
+        display: grid;
+        gap: 10px;
+      }
+      .persona {
+        display: flex;
+        gap: 26px;
+        align-items: center;
+      }
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 32px;
+        border: 1px solid rgba(37, 99, 235, 0.15);
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(59, 130, 246, 0.12));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--accent);
+      }
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .flow-step {
+        border-radius: 24px;
+        padding: 22px;
+        border: 1px solid var(--border);
+        background: rgba(37, 99, 235, 0.04);
+      }
+      .flow-step strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+      .screens {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .screen {
+        height: 240px;
+        border-radius: 32px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(255, 255, 255, 0.8));
+        position: relative;
+      }
+      .screen::after {
+        content: 'интерфейс';
+        position: absolute;
+        bottom: 20px;
+        left: 24px;
+        color: rgba(15, 23, 42, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 14px;
+      }
+      .stat {
+        font-size: 54px;
+        font-weight: 600;
+      }
+      .stat span {
+        display: block;
+        font-size: 18px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="deck">
+      <section class="slide">
+        <span class="pill">MAX WEBAPP</span>
+        <h1>MAX WebApp · универсальный чат-бот</h1>
+        <p>
+          Команда ITCenter создала чат-бот, который повторяет структуру и визуал MAX WebApp. Его можно подключить к любому
+          вузу — достаточно предоставить API или доступ к данным, мы подгоняем их под единый формат.
+        </p>
+        <div class="grid two">
+          <div class="card">
+            <h3>Титульный слайд</h3>
+            <p>MAX WebApp · команда ITCenter разработала.</p>
+          </div>
+          <div class="card">
+            <h3>Зачем</h3>
+            <p>Сделать привычный интерфейс умным: бот понимает вопросы, открывает нужные разделы, оформляет заявки.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h2>Профайл команды</h2>
+        <div class="grid two">
+          <div class="card persona">
+            <div class="avatar">ИД</div>
+            <div>
+              <h3>Доленков Игорь</h3>
+              <p>Lead Frontend. Отвечает за Web/VK Mini App/desktop оболочки, компоненты, доступность.</p>
+              <p>Поддержка всех ролей (абитуриент, студент, сотрудник), синхронизация с MAX UI Kit.</p>
+            </div>
+          </div>
+          <div class="card persona">
+            <div class="avatar">МУ</div>
+            <div>
+              <h3>Урываев Максим</h3>
+              <p>Lead Backend. Архитектура API-шлюза, адаптеры под API вузов, безопасность, масштабирование.</p>
+              <p>Гарантирует, что структура приложения не меняется, а новые вузы подключаются через маппинги.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h2>Целевая аудитория и потребности</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>Студенты</h3>
+            <ul>
+              <li>Мгновенный доступ к расписанию, проектам, библиотеке.</li>
+              <li>Уведомления по дедлайнам и изменениям.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Абитуриенты</h3>
+            <ul>
+              <li>Навигация по программам и условиям поступления.</li>
+              <li>Помощь с документами и открытыми днями.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Сотрудники</h3>
+            <ul>
+              <li>HR/деканат: разгрузка от повторяющихся вопросов.</li>
+              <li>Единые процессы гостевых пропусков, отпусков, командировок.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h2>Проблемы аудитории</h2>
+        <ul>
+          <li>Сложный доступ к функциям: у каждого сервиса свой интерфейс, нужен универсальный вход.</li>
+          <li>Личный кабинет вуза перегружен ссылками и инструкциями — пользователи теряются.</li>
+          <li>Все процессы выведены на сайт: много форм, бумажных заявок, очередей.</li>
+          <li>Нет универсального решения, которое «понимало бы» контекст пользователя и вело по сценариям.</li>
+        </ul>
+      </section>
+
+      <section class="slide">
+        <h2>Технические требования</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>Универсальность</h3>
+            <p>Возможность подключить любой вуз: если есть API — используем, если нет — строим адаптер поверх выгрузок.</p>
+          </div>
+          <div class="card">
+            <h3>Масштабируемость</h3>
+            <p>Kubernetes + autoscaling. Новые сценарии подключаются как микросервисы, не ломая общую схему.</p>
+          </div>
+          <div class="card">
+            <h3>Интерфейс</h3>
+            <p>Строгая привязка к MAX WebApp UI: те же карточки, типографика, нижнее меню, skeleton-стейты.</p>
+          </div>
+          <div class="card">
+            <h3>Безопасность</h3>
+            <p>SSO MAX ID, разграничение ролей, шифрование диалогов, журналирование, готовность к аудитам вузов.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h2>Ключевые фичи · абитуриент</h2>
+        <div class="flow">
+          <div class="flow-step">
+            <strong>1. Подбор программ</strong>
+            <p>Бот задаёт вопросы, подбирает направления, открывает карточки ProgramsPage.</p>
+          </div>
+          <div class="flow-step">
+            <strong>2. Поступление</strong>
+            <p>Ведёт по сценариям Admission Inquiry: собирает данные, отправляет заявку через API.</p>
+          </div>
+          <div class="flow-step">
+            <strong>3. Open Day</strong>
+            <p>Регистрирует на дни открытых дверей, выдаёт QR, напоминает о визите.</p>
+          </div>
+        </div>
+        <div class="screens">
+          <div class="screen"></div>
+          <div class="screen"></div>
+          <div class="screen"></div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h2>Ключевые фичи · студент</h2>
+        <div class="flow">
+          <div class="flow-step">
+            <strong>1. Персональное расписание</strong>
+            <p>«Покажи пары завтра» — бот возвращает табы SchedulePage, можно пролистать недели.</p>
+          </div>
+          <div class="flow-step">
+            <strong>2. Проекты и таски</strong>
+            <p>Интеграция с ProjectsPage и TaskTracker: подача заявки, проверка статусов, уведомления.</p>
+          </div>
+          <div class="flow-step">
+            <strong>3. Сервисы кампуса</strong>
+            <p>Деканат, библиотека, общежитие — бот заполняет формы, отслеживает ответ.</p>
+          </div>
+        </div>
+        <div class="screens">
+          <div class="screen"></div>
+          <div class="screen"></div>
+          <div class="screen"></div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h2>Ключевые фичи · сотрудник</h2>
+        <div class="flow">
+          <div class="flow-step">
+            <strong>1. Командировки</strong>
+            <p>Бот собирает цель поездки, даты, бюджет. Данные уходят в StaffTravelPage API.</p>
+          </div>
+          <div class="flow-step">
+            <strong>2. Отпуска и гостевые</strong>
+            <p>Запрашивает необходимые поля, подставляет контакты замены, фиксирует статусы.</p>
+          </div>
+          <div class="flow-step">
+            <strong>3. HR справки</strong>
+            <p>Коннектор к HR сервиcам: бот подбирает тип справки, отправляет заявку, сообщает о готовности.</p>
+          </div>
+        </div>
+        <div class="screens">
+          <div class="screen"></div>
+          <div class="screen"></div>
+          <div class="screen"></div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h2>Архитектура и масштабирование</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>Единая логика</h3>
+            <p>
+              Клиентское приложение не меняется: это тот же MAX WebApp. Чат-бот добавляет слой диалогов поверх UI и вызывает
+              существующие эндпоинты.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Гибрид API</h3>
+            <p>
+              Если у вуза есть API — подключаем напрямую. Если нет — строим адаптер (ETL + наш REST), конвертируем данные к
+              единому контракту.
+            </p>
+          </div>
+        </div>
+        <div class="grid three">
+          <div class="card">
+            <h3>Уровень карты</h3>
+            <p>API Gateway + Orchestrator. Интенты → сценарии → вызов нужных сервисов.</p>
+          </div>
+          <div class="card">
+            <h3>Adapter Layer</h3>
+            <p>Набор микросервисов для проектов, расписания, библиотек, HR. Каждый может подменить источник данных.</p>
+          </div>
+          <div class="card">
+            <h3>Масштабирование</h3>
+            <p>Добавление новых вузов — лишь настройка маппингов. Планы: plug-in под корпоративные порталы, аналитика usage.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h2>Research · востребованность</h2>
+        <div class="grid three">
+          <div class="card stat">
+            350
+            <span>студентов РЭУ прошли опрос · ноябрь 2025</span>
+          </div>
+          <div class="card stat">
+            68%
+            <span>жалоб на сложность поиска функций в личном кабинете</span>
+          </div>
+          <div class="card stat">
+            42%
+            <span>готовы пользоваться ботом вместо call-центра уже сейчас</span>
+          </div>
+        </div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Ключевые инсайты</h3>
+            <ul>
+              <li>Студенты хотят, чтобы интерфейс был «как в MAX WebApp», иначе доверие падает.</li>
+              <li>Абитуриенты боятся длинных форм — бот должен «заполнять за них».</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Полевые тесты</h3>
+            <ul>
+              <li>Пилот в РЭУ: 3 недели, 120 активных пользователей, 210 обработанных запросов.</li>
+              <li>Средняя оценка удобства (SUS) — 84, NPS +47.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+

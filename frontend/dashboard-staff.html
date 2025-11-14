@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд сотрудника - Университетский бот</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-content">
+            <button class="nav-back" onclick="window.location.href='role-selection.html'">←</button>
+            <div class="nav-title">Сотрудник вуза</div>
+            <div style="width: 40px;"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <div class="dashboard-title" id="staffUniversityName">Ваш вуз</div>
+            <div class="dashboard-subtitle">Добро пожаловать, сотрудник!</div>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item" onclick="openSection('business-trips')">
+                <div class="menu-icon">✈️</div>
+                <div class="menu-content">
+                    <div class="menu-title">Командировки</div>
+                    <div class="menu-description">Оформление и согласование заявок и отчетов</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('vacations')">
+                <div class="menu-icon">🏖️</div>
+                <div class="menu-content">
+                    <div class="menu-title">Отпуска</div>
+                    <div class="menu-description">Оформление и согласование заявок на отпуск</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('office')">
+                <div class="menu-icon">🏢</div>
+                <div class="menu-content">
+                    <div class="menu-title">Офис</div>
+                    <div class="menu-description">Справки с места работы, гостевой пропуск</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('events')">
+                <div class="menu-icon">🎉</div>
+                <div class="menu-content">
+                    <div class="menu-title">Внеучебная деятельность</div>
+                    <div class="menu-description">Календарь событий и регистрация</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const selectedUniversity = localStorage.getItem('selectedUniversity');
+        if (selectedUniversity) {
+            document.getElementById('staffUniversityName').textContent = selectedUniversity;
+        } else {
+            window.location.href = 'index.html';
+        }
+
+        function openSection(section) {
+            alert(`Раздел "${section}" будет реализован в следующих версиях`);
+        }
+    </script>
+</body>
+</html>
+

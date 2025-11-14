@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд абитуриента - Университетский бот</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-content">
+            <button class="nav-back" onclick="window.location.href='role-selection.html'">←</button>
+            <div class="nav-title">Абитуриент</div>
+            <div style="width: 40px;"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <div class="dashboard-title" id="abiturientUniversityName">Ваш вуз</div>
+            <div class="dashboard-subtitle">Добро пожаловать, абитуриент!</div>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item" onclick="openSection('university-info')">
+                <div class="menu-icon">🏛️</div>
+                <div class="menu-content">
+                    <div class="menu-title">Информация о вузе</div>
+                    <div class="menu-description">Общая информация, история, достижения</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('programs')">
+                <div class="menu-icon">📚</div>
+                <div class="menu-content">
+                    <div class="menu-title">Образовательные программы</div>
+                    <div class="menu-description">Список программ, направления подготовки</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('admission-conditions')">
+                <div class="menu-icon">📝</div>
+                <div class="menu-content">
+                    <div class="menu-title">Условия поступления</div>
+                    <div class="menu-description">Вступительные испытания, баллы, квоты</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('open-day')">
+                <div class="menu-icon">📅</div>
+                <div class="menu-content">
+                    <div class="menu-title">День открытых дверей</div>
+                    <div class="menu-description">Записаться на день открытых дверей</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('excursion')">
+                <div class="menu-icon">🚶</div>
+                <div class="menu-content">
+                    <div class="menu-title">Экскурсия</div>
+                    <div class="menu-description">Записаться на экскурсию по кампусу</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const selectedUniversity = localStorage.getItem('selectedUniversity');
+        if (selectedUniversity) {
+            document.getElementById('abiturientUniversityName').textContent = selectedUniversity;
+        } else {
+            window.location.href = 'index.html';
+        }
+
+        function openSection(section) {
+            alert(`Раздел "${section}" будет реализован в следующих версиях`);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свободные аудитории - РЭУ им. Плеханова</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-content">
+            <button class="nav-back" onclick="window.location.href='dashboard-student.html'">←</button>
+            <div class="nav-title">Свободные аудитории</div>
+            <div style="width: 40px;"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 style="margin-top: 24px;">Расписание свободных аудиторий</h2>
+        <p class="subtitle">Выберите пару для просмотра доступных аудиторий</p>
+
+        <div class="form-group">
+            <label class="form-label">Выберите дату</label>
+            <input type="date" class="form-input" id="datePicker" value="">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Выберите пару</label>
+            <select class="form-input" id="lessonSelect">
+                <option value="1">1 пара (09:00 - 10:30)</option>
+                <option value="2">2 пара (10:45 - 12:15)</option>
+                <option value="3">3 пара (13:00 - 14:30)</option>
+                <option value="4">4 пара (14:45 - 16:15)</option>
+                <option value="5">5 пара (16:30 - 18:00)</option>
+                <option value="6">6 пара (18:15 - 19:45)</option>
+            </select>
+        </div>
+
+        <button class="btn" onclick="loadFreeClassrooms()">Показать свободные аудитории</button>
+
+        <div id="classroomsList" style="margin-top: 24px;"></div>
+    </div>
+
+    <script>
+        // Установка сегодняшней даты по умолчанию
+        document.getElementById('datePicker').valueAsDate = new Date();
+
+        function loadFreeClassrooms() {
+            const date = document.getElementById('datePicker').value;
+            const lesson = document.getElementById('lessonSelect').value;
+            
+            // Пример данных (в реальном приложении будет запрос к API)
+            const freeClassrooms = [
+                { number: '101', building: 'Главный корпус', capacity: 30, floor: 1 },
+                { number: '205', building: 'Главный корпус', capacity: 50, floor: 2 },
+                { number: '312', building: 'Главный корпус', capacity: 80, floor: 3 },
+                { number: '401', building: 'Корпус Б', capacity: 40, floor: 4 },
+                { number: '502', building: 'Корпус Б', capacity: 60, floor: 5 },
+                { number: '201', building: 'Корпус В', capacity: 25, floor: 2 },
+            ];
+
+            const container = document.getElementById('classroomsList');
+            container.innerHTML = '';
+
+            if (freeClassrooms.length === 0) {
+                container.innerHTML = '<div class="card text-center"><p>На выбранную пару свободных аудиторий не найдено</p></div>';
+                return;
+            }
+
+            const lessonTimes = {
+                '1': '09:00 - 10:30',
+                '2': '10:45 - 12:15',
+                '3': '13:00 - 14:30',
+                '4': '14:45 - 16:15',
+                '5': '16:30 - 18:00',
+                '6': '18:15 - 19:45'
+            };
+
+            container.innerHTML += `
+                <div class="card">
+                    <div class="card-title">Свободные аудитории на ${lesson} пару (${lessonTimes[lesson]})</div>
+                    <div class="card-description">Дата: ${new Date(date).toLocaleDateString('ru-RU')}</div>
+                </div>
+            `;
+
+            freeClassrooms.forEach(classroom => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div class="card-title">Аудитория ${classroom.number}</div>
+                            <div class="card-description">
+                                ${classroom.building} • ${classroom.floor} этаж • Вместимость: ${classroom.capacity} мест
+                            </div>
+                        </div>
+                        <span class="badge badge-success">Свободна</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Автоматическая загрузка при изменении параметров
+        document.getElementById('datePicker').addEventListener('change', loadFreeClassrooms);
+        document.getElementById('lessonSelect').addEventListener('change', loadFreeClassrooms);
+
+        // Загрузка при открытии страницы
+        window.addEventListener('load', loadFreeClassrooms);
+    </script>
+</body>
+</html>
+

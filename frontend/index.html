@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор вуза - Университетский бот</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text-center" style="margin-top: 40px; margin-bottom: 32px;">
+            <h1>Добро пожаловать!</h1>
+            <p class="subtitle">Выберите ваш вуз для продолжения</p>
+        </div>
+
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="universitySearch" placeholder="Поиск вуза...">
+        </div>
+
+        <div class="university-list" id="universityList">
+            <div class="university-item" onclick="selectUniversity('РЭУ им. Г.В. Плеханова')">
+                <span class="university-name">РЭУ им. Г.В. Плеханова</span>
+                <span class="university-arrow">→</span>
+            </div>
+            <div class="university-item" onclick="selectUniversity('МГУ им. М.В. Ломоносова')">
+                <span class="university-name">МГУ им. М.В. Ломоносова</span>
+                <span class="university-arrow">→</span>
+            </div>
+            <div class="university-item" onclick="selectUniversity('МГТУ им. Н.Э. Баумана')">
+                <span class="university-name">МГТУ им. Н.Э. Баумана</span>
+                <span class="university-arrow">→</span>
+            </div>
+            <div class="university-item" onclick="selectUniversity('НИУ ВШЭ')">
+                <span class="university-name">НИУ ВШЭ</span>
+                <span class="university-arrow">→</span>
+            </div>
+            <div class="university-item" onclick="selectUniversity('МГИМО')">
+                <span class="university-name">МГИМО</span>
+                <span class="university-arrow">→</span>
+            </div>
+            <div class="university-item" onclick="selectUniversity('СПбГУ')">
+                <span class="university-name">СПбГУ</span>
+                <span class="university-arrow">→</span>
+            </div>
+            <div class="university-item" onclick="selectUniversity('МФТИ')">
+                <span class="university-name">МФТИ</span>
+                <span class="university-arrow">→</span>
+            </div>
+            <div class="university-item" onclick="selectUniversity('РГУ нефти и газа им. И.М. Губкина')">
+                <span class="university-name">РГУ нефти и газа им. И.М. Губкина</span>
+                <span class="university-arrow">→</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Сохранение выбранного вуза
+        function selectUniversity(name) {
+            localStorage.setItem('selectedUniversity', name);
+            window.location.href = 'role-selection.html';
+        }
+
+        // Поиск по вузам
+        document.getElementById('universitySearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const items = document.querySelectorAll('.university-item');
+            
+            items.forEach(item => {
+                const universityName = item.querySelector('.university-name').textContent.toLowerCase();
+                if (universityName.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

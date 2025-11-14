@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд студента - Университетский бот</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-content">
+            <button class="nav-back" onclick="window.location.href='role-selection.html'">←</button>
+            <div class="nav-title">Студент</div>
+            <div style="width: 40px;"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <div class="dashboard-title" id="studentUniversityName">Ваш вуз</div>
+            <div class="dashboard-subtitle">Добро пожаловать, студент!</div>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Обучение -->
+            <div class="menu-item" onclick="openSection('schedule')">
+                <div class="menu-icon">📅</div>
+                <div class="menu-content">
+                    <div class="menu-title">Расписание</div>
+                    <div class="menu-description">Актуальное расписание занятий</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('feedback')">
+                <div class="menu-icon">💬</div>
+                <div class="menu-content">
+                    <div class="menu-title">Обратная связь</div>
+                    <div class="menu-description">Оставить отзыв преподавателям</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('electives')">
+                <div class="menu-icon">📚</div>
+                <div class="menu-content">
+                    <div class="menu-title">Факультативы</div>
+                    <div class="menu-description">Записаться на факультативы и цифровую кафедру</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <!-- Специальная функция для РЭУ -->
+            <div class="menu-item" id="freeClassroomsItem" onclick="openSection('free-classrooms')" style="display: none;">
+                <div class="menu-icon">🏫</div>
+                <div class="menu-content">
+                    <div class="menu-title">Свободные аудитории</div>
+                    <div class="menu-description">Просмотр свободных аудиторий по парам</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <!-- Проектная деятельность -->
+            <div class="menu-item" onclick="openSection('projects')">
+                <div class="menu-icon">🚀</div>
+                <div class="menu-content">
+                    <div class="menu-title">Проектная деятельность</div>
+                    <div class="menu-description">Предложить проект, собрать команду</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('available-projects')">
+                <div class="menu-icon">📋</div>
+                <div class="menu-content">
+                    <div class="menu-title">Доступные проекты</div>
+                    <div class="menu-description">Просмотр и отклик на участие</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('task-tracker')">
+                <div class="menu-icon">✅</div>
+                <div class="menu-content">
+                    <div class="menu-title">Таск-трекер</div>
+                    <div class="menu-description">Уведомления и задачи по проектам</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <!-- Карьера -->
+            <div class="menu-item" onclick="openSection('career')">
+                <div class="menu-icon">💼</div>
+                <div class="menu-content">
+                    <div class="menu-title">Карьера</div>
+                    <div class="menu-description">Консультации центра карьеры</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('vacancies')">
+                <div class="menu-icon">🔍</div>
+                <div class="menu-content">
+                    <div class="menu-title">Вакансии</div>
+                    <div class="menu-description">Просмотр и отклик на вакансии</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <!-- Деканат -->
+            <div class="menu-item" onclick="openSection('deanery')">
+                <div class="menu-icon">📄</div>
+                <div class="menu-content">
+                    <div class="menu-title">Деканат</div>
+                    <div class="menu-description">Справки, оплата обучения, документы</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <!-- Общежитие -->
+            <div class="menu-item" onclick="openSection('dormitory')">
+                <div class="menu-icon">🏠</div>
+                <div class="menu-content">
+                    <div class="menu-title">Общежитие</div>
+                    <div class="menu-description">Оплата, услуги, пропуска, техподдержка</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <!-- Внеучебная деятельность -->
+            <div class="menu-item" onclick="openSection('events')">
+                <div class="menu-icon">🎉</div>
+                <div class="menu-content">
+                    <div class="menu-title">Внеучебная деятельность</div>
+                    <div class="menu-description">Календарь событий и регистрация</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <!-- Библиотека -->
+            <div class="menu-item" onclick="openSection('library')">
+                <div class="menu-icon">📖</div>
+                <div class="menu-content">
+                    <div class="menu-title">Библиотека</div>
+                    <div class="menu-description">Заказ книг и электронная библиотека</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Отображение выбранного вуза
+        const selectedUniversity = localStorage.getItem('selectedUniversity');
+        if (selectedUniversity) {
+            document.getElementById('studentUniversityName').textContent = selectedUniversity;
+            
+            // Показываем функцию свободных аудиторий только для РЭУ
+            if (selectedUniversity.includes('Плеханова')) {
+                document.getElementById('freeClassroomsItem').style.display = 'flex';
+            }
+        } else {
+            window.location.href = 'index.html';
+        }
+
+        function openSection(section) {
+            if (section === 'free-classrooms') {
+                window.location.href = 'free-classrooms.html';
+            } else {
+                // Здесь будет переход на соответствующие страницы
+                alert(`Раздел "${section}" будет реализован в следующих версиях`);
+            }
+        }
+    </script>
+</body>
+</html>
+

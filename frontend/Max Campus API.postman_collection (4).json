@@ -1,0 +1,3118 @@
+{
+	"info": {
+		"_postman_id": "59d7af18-af85-4549-b119-efeeee271b88",
+		"name": "Max Campus API",
+		"description": "Коллекция запросов для тестирования backend-API мини-приложения Max Campus.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28465112"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "GET /auth/me — профиль",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						},
+						"description": "Возвращает данные текущего пользователя и параметры сессии."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /auth/me — профиль",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						},
+						"description": "Возвращает данные текущего пользователя и параметры сессии."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /auth/login — сменить статус",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"student@example.com\",\n    \"password\": \"student123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Возвращает данные текущего пользователя и параметры сессии."
+					},
+					"response": []
+				},
+				{
+					"name": "POST users/settings - настройки пользователя",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"settings\": {\n        \"vyz\": \"REA\",\n        \"age\": 10\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"settings"
+							]
+						},
+						"description": "Возвращает данные текущего пользователя и параметры сессии."
+					},
+					"response": []
+				},
+				{
+					"name": "GET users/settings - настройки пользователя получить",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"settings"
+							]
+						},
+						"description": "Возвращает данные текущего пользователя и параметры сессии."
+					},
+					"response": []
+				}
+			],
+			"description": "Аутентификация и получение информации о текущем пользователе."
+		},
+		{
+			"name": "Admissions",
+			"item": [
+				{
+					"name": "GET /admissions/universities — список вузов",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admissions/universities?city=Москва&has_dormitory=true&limit=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admissions",
+								"universities"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Москва"
+								},
+								{
+									"key": "has_dormitory",
+									"value": "true"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						},
+						"description": "Фильтрация университетов по городу, доступному общежитию и другим признакам."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /admissions/universities/:id — карточка вуза",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admissions/universities/{{university_id}}?expand=faculties,campuses",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admissions",
+								"universities",
+								"{{university_id}}"
+							],
+							"query": [
+								{
+									"key": "expand",
+									"value": "faculties,campuses"
+								}
+							]
+						},
+						"description": "Возвращает расширенную информацию по конкретному университету."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /admissions/programs — образовательные программы",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admissions/programs?university_id={{university_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admissions",
+								"programs"
+							],
+							"query": [
+								{
+									"key": "university_id",
+									"value": "{{university_id}}"
+								}
+							]
+						},
+						"description": "Список программ с фильтрами по уровню, формату и вузу."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /admissions/programs/:id — карточка программы",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admissions/programs/{{program_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admissions",
+								"programs",
+								"{{program_id}}"
+							]
+						},
+						"description": "Детальное описание образовательной программы, включая квоты и дедлайны."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /admissions/requirements — требования",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admissions/requirements?program_id={{program_id}}&year=2024",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admissions",
+								"requirements"
+							],
+							"query": [
+								{
+									"key": "program_id",
+									"value": "{{program_id}}"
+								},
+								{
+									"key": "year",
+									"value": "2024"
+								}
+							]
+						},
+						"description": "Получение актуальных требований к поступлению для выбранной программы."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /admissions/open-days — дни открытых дверей",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admissions/open-days?university_id={{university_id}}&program_id={{program_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admissions",
+								"open-days"
+							],
+							"query": [
+								{
+									"key": "university_id",
+									"value": "{{university_id}}"
+								},
+								{
+									"key": "program_id",
+									"value": "{{program_id}}"
+								}
+							]
+						},
+						"description": "Список ближайших мероприятий для абитуриентов."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /admissions/open-days/registrations — регистрация",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Idempotency-Key",
+								"value": "{{idempotency_key}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"program_id\": \"{{program_id}}\",\n  \"event_id\": \"hse-open-day-july\",\n  \"full_name\": \"Иван Иванов\",\n  \"email\": \"student@example.com\",\n  \"phone\": \"+7 900 000-00-00\",\n  \"comment\": \"Хочу посетить мероприятие\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/admissions/open-days/registrations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admissions",
+								"open-days",
+								"registrations"
+							]
+						},
+						"description": "Запись на мероприятие для абитуриентов. Поддерживает идемпотентность."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /admissions/inquiries — вопрос приёмной комиссии",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Idempotency-Key",
+								"value": "{{idempotency_key}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"full_name\": \"Иван Иванов\",\n  \"email\": \"student@example.com\",\n  \"phone\": \"+7 900 000-00-00\",\n  \"question\": \"Расскажите, пожалуйста, про условия поступления.\",\n  \"university_id\": \"{{university_id}}\",\n  \"program_id\": \"{{program_id}}\",\n  \"topic\": \"admission\",\n  \"consents\": {\n    \"personal_data\": true\n  },\n  \"attachments\": [\n    {\n      \"name\": \"portfolio.pdf\",\n      \"url\": \"https://example.com/portfolio.pdf\"\n    }\n  ],\n  \"meta\": {\n    \"source\": \"mini_app\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/admissions/inquiries",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admissions",
+								"inquiries"
+							]
+						},
+						"description": "Отправка обращения в приёмную комиссию. Поддерживает идемпотентность."
+					},
+					"response": []
+				}
+			],
+			"description": "Поступление: университеты, программы, мероприятия и обращения абитуриентов."
+		},
+		{
+			"name": "Schedule & Electives",
+			"item": [
+				{
+					"name": "GET /schedule/my — моё расписание",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/schedule/my?from=2024-03-11&to=2024-11-17&group_id=group-msu-phys-101",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"schedule",
+								"my"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2024-03-11"
+								},
+								{
+									"key": "to",
+									"value": "2024-11-17"
+								},
+								{
+									"key": "group_id",
+									"value": "group-msu-phys-101"
+								}
+							]
+						},
+						"description": "Персональное расписание пользователя в заданном диапазоне дат."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /schedule/groups/:id — расписание группы",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/schedule/groups/{{academic_group_id}}?from=2024-11-11&to=2024-11-17&teacher_id={{teacher_id}}&X-Max-Init-Data=auth_date=1762996354%26hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368%26chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D%26ip=176.107.246.89%26user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D%26query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"schedule",
+								"groups",
+								"{{academic_group_id}}"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2024-11-11"
+								},
+								{
+									"key": "to",
+									"value": "2024-11-17"
+								},
+								{
+									"key": "teacher_id",
+									"value": "{{teacher_id}}"
+								},
+								{
+									"key": "X-Max-Init-Data",
+									"value": "auth_date=1762996354%26hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368%26chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D%26ip=176.107.246.89%26user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D%26query_id=094a23bd-67b0-486f-a106-3a71095b85cf"
+								}
+							]
+						},
+						"description": "Расписание учебной группы с фильтрами по преподавателю и формату."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /feedback/teachers — отзыв о преподавателе",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Idempotency-Key",
+								"value": "{{idempotency_key}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354%26hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368%26chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D%26ip=176.107.246.89%26user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D%26query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"teacher_id\": \"{{teacher_id}}\",\n  \"course_id\": \"{{course_id}}\",\n  \"rating\": 5,\n  \"comment\": \"Отличная подача материала и актуальные примеры.\",\n  \"anonymous\": true,\n  \"tags\": [\n    \"интерактивность\",\n    \"практика\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/feedback/teachers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"feedback",
+								"teachers"
+							]
+						},
+						"description": "Отправка обратной связи по дисциплине и преподавателю."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /electives/catalog — каталог элективов",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354%26hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368%26chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D%26ip=176.107.246.89%26user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D%26query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/electives/catalog?term=2024-fall&format=onsite&language=ru",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"electives",
+								"catalog"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "2024-fall"
+								},
+								{
+									"key": "format",
+									"value": "onsite"
+								},
+								{
+									"key": "language",
+									"value": "ru"
+								}
+							]
+						},
+						"description": "Каталог элективных курсов с фильтрами по семестру и формату."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /electives/enrollments — заявка на электив",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Idempotency-Key",
+								"value": "{{idempotency_key}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354%26hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368%26chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D%26ip=176.107.246.89%26user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D%26query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"course_id\": \"{{course_id}}\",\n  \"term\": \"2024-fall\",\n  \"priority\": 1,\n  \"comment\": \"Хотел бы попасть в группу A\",\n  \"consents\": {\n    \"personal_data\": true\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/electives/enrollments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"electives",
+								"enrollments"
+							]
+						},
+						"description": "Создание заявки на участие в элективном курсе."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /electives/enrollments/my — мои заявки",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354%26hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368%26chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D%26ip=176.107.246.89%26user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D%26query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/electives/enrollments/my?term=2024-fall&status=approved,pending",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"electives",
+								"enrollments",
+								"my"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "2024-fall"
+								},
+								{
+									"key": "status",
+									"value": "approved,pending"
+								}
+							]
+						},
+						"description": "Список заявок пользователя на элективы."
+					},
+					"response": []
+				}
+			],
+			"description": "Расписание занятий, отзывы о преподавателях и управление элективами."
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "GET /projects — каталог проектов",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							]
+						},
+						"description": "Поиск проектов с фильтрами по домену, стеку и статусу."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /projects — публикация проекта",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Сервис рекомендаций\",\n  \"summary\": \"Короткое описание проекта для витрины.\",\n  \"description_md\": \"## Цель\\nСоздать сервис рекомендаций для студентов.\",\n  \"owner\": {\n    \"type\": \"student\"\n  },\n  \"domain_tags\": [\n    \"data_science\",\n    \"education\"\n  ],\n  \"skills_required\": [\n    \"python\",\n    \"ml\"\n  ],\n  \"links\": {\n    \"figma\": \"https://example.com/figma\"\n  },\n  \"timeline\": {\n    \"start\": \"2024-10\",\n    \"end\": \"2025-02\"\n  },\n  \"team\": {\n    \"needed\": 3\n  },\n  \"constraints\": {\n    \"format\": \"intra\"\n  },\n  \"education\": {\n    \"ects\": 6\n  },\n  \"contacts\": {\n    \"email\": \"owner@example.com\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							]
+						},
+						"description": "Создание собственного проекта для витрины."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /projects/:id — карточка проекта",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects/{{project_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"{{project_id}}"
+							]
+						},
+						"description": "Полная информация по проекту."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /projects/:id/apply — подать заявку",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"role_code\": \"backend\",\n  \"motivation\": \"Готов взять на себя бэкенд-разработку.\",\n  \"attachments\": [\n    {\n      \"name\": \"cv.pdf\",\n      \"url\": \"https://example.com/cv.pdf\"\n    }\n  ],\n  \"cv_url\": \"https://example.com/cv.pdf\",\n  \"portfolio_url\": \"https://github.com/example\",\n  \"consents\": {\n    \"personal_data\": true\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects/{{project_id}}/apply",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"{{project_id}}",
+								"apply"
+							]
+						},
+						"description": "Подача заявки на участие в проекте."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /projects/:id/team — команда",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects/{{project_id}}/team",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"{{project_id}}",
+								"team"
+							]
+						},
+						"description": "Участники команды выбранного проекта."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /projects/:id/tasks — задачи",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects/{{project_id}}/tasks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"{{project_id}}",
+								"tasks"
+							]
+						},
+						"description": "Список задач проекта из трекера."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /projects/:id/subscriptions — подписка",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"channels\": [\n    \"in_app\",\n    \"email\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects/{{project_id}}/subscriptions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"{{project_id}}",
+								"subscriptions"
+							]
+						},
+						"description": "Оформление подписки на уведомления по проекту."
+					},
+					"response": []
+				}
+			],
+			"description": "Проектная деятельность: каталог, заявки и подписки."
+		},
+		{
+			"name": "Careers",
+			"item": [
+				{
+					"name": "GET /careers/vacancies — вакансии",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/careers/vacancies?q=аналитик&direction=analytics&grade=junior&remote_only=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"careers",
+								"vacancies"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "аналитик"
+								},
+								{
+									"key": "direction",
+									"value": "analytics"
+								},
+								{
+									"key": "grade",
+									"value": "junior"
+								},
+								{
+									"key": "remote_only",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Вакансии партнёров с фильтрами по направлению и грейду."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /careers/vacancies/:id — карточка вакансии",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/careers/vacancies/{{vacancy_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"careers",
+								"vacancies",
+								"{{vacancy_id}}"
+							]
+						},
+						"description": "Подробности по конкретной вакансии."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /careers/vacancies/:id/apply — отклик",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resume_url\": \"https://example.com/resume.pdf\",\n  \"cover_letter\": \"Готов присоединиться к команде и развиваться.\",\n  \"portfolio_links\": [\n    \"https://github.com/example\"\n  ],\n  \"answers\": {\n    \"experience\": \"2 года\",\n    \"relocation\": \"готов\"\n  },\n  \"consents\": {\n    \"personal_data\": true\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/careers/vacancies/{{vacancy_id}}/apply",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"careers",
+								"vacancies",
+								"{{vacancy_id}}",
+								"apply"
+							]
+						},
+						"description": "Отклик на вакансию с сопроводительным письмом и портфолио."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /careers/consultations — запрос консультации",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"topic\": \"Подготовка к собеседованию\",\n  \"subtopic\": \"Product Manager\",\n  \"preferred_slots\": [\n    {\n      \"date\": \"2024-11-15\",\n      \"time\": \"10:00-11:00\"\n    },\n    {\n      \"date\": \"2024-11-16\",\n      \"time\": \"14:00-15:00\"\n    }\n  ],\n  \"preferred_channel\": \"video_call\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/careers/consultations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"careers",
+								"consultations"
+							]
+						},
+						"description": "Запись на карьерную консультацию."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /careers/consultations/my — мои консультации",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/careers/consultations/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"careers",
+								"consultations",
+								"my"
+							]
+						},
+						"description": "История запросов карьерных консультаций пользователя."
+					},
+					"response": []
+				}
+			],
+			"description": "Центр карьеры: вакансии, отклики и консультации."
+		},
+		{
+			"name": "Deanery",
+			"item": [
+				{
+					"name": "POST /deanery/certificates — запрос справки",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"certificate_type\": \"study_place\",\n  \"language\": \"ru\",\n  \"purpose\": \"Для работодателя\",\n  \"copies_count\": 1,\n  \"delivery_method\": \"pickup\",\n  \"pickup_location\": \"Главный корпус\",\n  \"digital_copy\": true,\n  \"attachments\": [\n    {\n      \"name\": \"power_of_attorney.pdf\",\n      \"url\": \"https://example.com/power_of_attorney.pdf\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/deanery/certificates",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deanery",
+								"certificates"
+							]
+						},
+						"description": "Оформление справки из деканата."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /deanery/certificates/my — мои справки",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/deanery/certificates/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deanery",
+								"certificates",
+								"my"
+							]
+						},
+						"description": "Статусы запросов справок."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /deanery/payments/tuition/intents — платёж за обучение",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"invoice_id\": \"{{tuition_invoice_id}}\",\n  \"amount\": 120000,\n  \"currency\": \"RUB\",\n  \"purpose\": \"tuition_fall_2024\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/deanery/payments/tuition/intents",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deanery",
+								"payments",
+								"tuition",
+								"intents"
+							]
+						},
+						"description": "Создание платёжного намерения на оплату обучения."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /deanery/payments/tuition — счета к оплате",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/deanery/payments/tuition",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deanery",
+								"payments",
+								"tuition"
+							]
+						},
+						"description": "Список счетов за обучение и их статусы."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /deanery/compensations — запрос компенсации",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"compensation_type\": \"scholarship_refund\",\n  \"amount\": 5000,\n  \"currency\": \"RUB\",\n  \"reason\": \"Не проведён семинар\",\n  \"bank_details\": {\n    \"account\": \"40817810099910004312\",\n    \"bank\": \"АО Банк\"\n  },\n  \"documents\": [\n    {\n      \"name\": \"receipt.pdf\",\n      \"url\": \"https://example.com/receipt.pdf\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/deanery/compensations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deanery",
+								"compensations"
+							]
+						},
+						"description": "Создание заявки на компенсацию расходов."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /deanery/transfer-requests — перевод",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from_program_id\": \"{{program_id}}\",\n  \"to_program_id\": \"{{target_program_id}}\",\n  \"desired_term\": \"spring-2025\",\n  \"reason\": \"Хочу сменить направление подготовки\",\n  \"documents\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/deanery/transfer-requests",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deanery",
+								"transfer-requests"
+							]
+						},
+						"description": "Заявление на перевод между программами."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /deanery/academic-leave — академический отпуск",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reason\": \"Медицинские показания\",\n  \"leave_from\": \"2024-09-01\",\n  \"leave_to\": \"2025-02-01\",\n  \"documents\": [\n    {\n      \"name\": \"medical_certificate.pdf\",\n      \"url\": \"https://example.com/medical_certificate.pdf\"\n    }\n  ],\n  \"advisor\": \"Иван Петров\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/deanery/academic-leave",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deanery",
+								"academic-leave"
+							]
+						},
+						"description": "Подача заявления на академический отпуск."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /deanery/academic-leave/my — мои отпуска",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/deanery/academic-leave/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deanery",
+								"academic-leave",
+								"my"
+							]
+						},
+						"description": "История заявлений на академический отпуск."
+					},
+					"response": []
+				}
+			],
+			"description": "Деканат: справки, платежи, компенсации и академические отпуска."
+		},
+		{
+			"name": "Dormitory",
+			"item": [
+				{
+					"name": "POST /dorm/payments/intents — платёж за общежитие",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"residence\": \"Кампус А\",\n  \"period\": \"2024-09\",\n  \"amount\": 15000,\n  \"currency\": \"RUB\",\n  \"purpose\": \"оплата проживания\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/dorm/payments/intents",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dorm",
+								"payments",
+								"intents"
+							]
+						},
+						"description": "Создание платёжного намерения за проживание."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /dorm/services — услуги",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/dorm/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dorm",
+								"services"
+							]
+						},
+						"description": "Каталог доступных сервисов общежития."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /dorm/services/orders — заказ услуги",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"service_id\": \"{{dorm_service_id}}\",\n  \"payload\": {\n    \"room\": \"A-101\",\n    \"comment\": \"Нужна уборка\"\n  },\n  \"scheduled_for\": \"2024-11-15T09:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/dorm/services/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dorm",
+								"services",
+								"orders"
+							]
+						},
+						"description": "Создание заказа на услугу общежития."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /dorm/guests/passes — пропуск гостя",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"guest_full_name\": \"Пётр Сидоров\",\n  \"guest_document\": {\n    \"type\": \"passport\",\n    \"number\": \"4500 123456\"\n  },\n  \"visit_date\": \"2024-11-20\",\n  \"visit_time_from\": \"10:00:00\",\n  \"visit_time_to\": \"18:00:00\",\n  \"notes\": \"Коллега по проекту\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/dorm/guests/passes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dorm",
+								"guests",
+								"passes"
+							]
+						},
+						"description": "Оформление гостевого пропуска в общежитие."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /dorm/support/tickets — обращение в поддержку",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\": \"maintenance\",\n  \"subject\": \"Не работает розетка\",\n  \"description\": \"В комнате A-101 перестала работать розетка.\",\n  \"attachments\": [\n    {\n      \"name\": \"photo.jpg\",\n      \"url\": \"https://example.com/photo.jpg\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/dorm/support/tickets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dorm",
+								"support",
+								"tickets"
+							]
+						},
+						"description": "Создание тикета в поддержку общежития."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /dorm/support/tickets/my — мои обращения",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/dorm/support/tickets/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dorm",
+								"support",
+								"tickets",
+								"my"
+							]
+						},
+						"description": "История тикетов в поддержку общежития."
+					},
+					"response": []
+				}
+			],
+			"description": "Общежитие: платежи, сервисы и поддержка."
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "GET /events — события",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/events?q=хакатон&category=career",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "хакатон"
+								},
+								{
+									"key": "category",
+									"value": "career"
+								}
+							]
+						},
+						"description": "Список мероприятий кампуса."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /events/:id — карточка события",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/events/{{event_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events",
+								"{{event_id}}"
+							]
+						},
+						"description": "Детальная информация о событии."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /events/:id/registrations — регистрация",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"event_id\": \"{{event_id}}\",\n  \"form_payload\": {\n    \"guests\": 1,\n    \"comment\": \"Буду вовремя\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/events/{{event_id}}/registrations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events",
+								"{{event_id}}",
+								"registrations"
+							]
+						},
+						"description": "Регистрация на событие."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /events/my — мои регистрации",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/events/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events",
+								"my"
+							]
+						},
+						"description": "Список регистраций пользователя на события."
+					},
+					"response": []
+				}
+			],
+			"description": "Внеучебные события и регистрации."
+		},
+		{
+			"name": "Library",
+			"item": [
+				{
+					"name": "GET /library/catalog — каталог",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/library/catalog?q=машинное обучение&type=book&language=ru",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"library",
+								"catalog"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "машинное обучение"
+								},
+								{
+									"key": "type",
+									"value": "book"
+								},
+								{
+									"key": "language",
+									"value": "ru"
+								}
+							]
+						},
+						"description": "Каталог библиотеки с фильтрами по типу и языку."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /library/holds — бронь издания",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"item_id\": \"{{library_item_id}}\",\n  \"pickup_location\": \"Главная библиотека\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/library/holds",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"library",
+								"holds"
+							]
+						},
+						"description": "Бронирование экземпляра книги в библиотеке."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /library/holds/my — мои брони",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/library/holds/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"library",
+								"holds",
+								"my"
+							]
+						},
+						"description": "Текущие и прошедшие брони пользователя."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /library/loans/my — активные выдачи",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/library/loans/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"library",
+								"loans",
+								"my"
+							]
+						},
+						"description": "Список выданных материалов и сроки возврата."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /library/ebooks/access — электронные книги",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/library/ebooks/access",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"library",
+								"ebooks",
+								"access"
+							]
+						},
+						"description": "Доступные электронные издания."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /library/fines/payments/intents — оплата штрафа",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"loan_id\": \"{{library_loan_id}}\",\n  \"amount\": 350,\n  \"currency\": \"RUB\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/library/fines/payments/intents",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"library",
+								"fines",
+								"payments",
+								"intents"
+							]
+						},
+						"description": "Создание платёжного намерения для оплаты штрафа."
+					},
+					"response": []
+				}
+			],
+			"description": "Библиотека: каталог, бронирование и платежи."
+		},
+		{
+			"name": "HR & Office",
+			"item": [
+				{
+					"name": "POST /hr/travel/requests — командировка",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Digital Forum 2024\",\n  \"purpose\": \"Выступление с докладом\",\n  \"destination\": {\n    \"city\": \"Казань\",\n    \"country\": \"Россия\"\n  },\n  \"start_date\": \"2024-11-28\",\n  \"end_date\": \"2024-12-02\",\n  \"transport\": {\n    \"type\": \"train\",\n    \"class\": \"купе\"\n  },\n  \"accommodations\": [\n    {\n      \"hotel\": \"Отель Центральный\",\n      \"check_in\": \"2024-11-28\",\n      \"check_out\": \"2024-12-02\"\n    }\n  ],\n  \"expenses_plan\": [\n    {\n      \"category\": \"суточные\",\n      \"amount\": 5000,\n      \"currency\": \"RUB\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/hr/travel/requests",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hr",
+								"travel",
+								"requests"
+							]
+						},
+						"description": "Запрос на командировку."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /hr/travel/requests/my — мои командировки",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/hr/travel/requests/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hr",
+								"travel",
+								"requests",
+								"my"
+							]
+						},
+						"description": "История командировок пользователя."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /hr/leave/requests — отпуск",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"leave_type\": \"vacation\",\n  \"start_date\": \"2024-12-20\",\n  \"end_date\": \"2025-01-05\",\n  \"replacement\": {\n    \"full_name\": \"Анна Смирнова\",\n    \"contacts\": \"anna.smirnova@example.com\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/hr/leave/requests",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hr",
+								"leave",
+								"requests"
+							]
+						},
+						"description": "Заявка на отпуск."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /hr/leave/requests/my — мои отпуска",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/hr/leave/requests/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hr",
+								"leave",
+								"requests",
+								"my"
+							]
+						},
+						"description": "Заявления на отпуск и их статусы."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /hr/certificates — справка для сотрудника",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"certificate_type\": \"employment\",\n  \"purpose\": \"Для визы\",\n  \"delivery\": {\n    \"type\": \"digital\",\n    \"email\": \"employee@example.com\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/hr/certificates",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hr",
+								"certificates"
+							]
+						},
+						"description": "Запрос справки в HR-службу."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /office/guest-passes — пропуск в офис",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"guest_full_name\": \"Алексей Иванов\",\n  \"guest_company\": \"Partner LLC\",\n  \"visit_date\": \"2024-11-18\",\n  \"visit_time_from\": \"10:00:00\",\n  \"visit_time_to\": \"13:00:00\",\n  \"notes\": \"Встреча по проекту\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/office/guest-passes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"office",
+								"guest-passes"
+							]
+						},
+						"description": "Оформление гостевого пропуска в офис."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /office/guest-passes/my — мои гости",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/office/guest-passes/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"office",
+								"guest-passes",
+								"my"
+							]
+						},
+						"description": "История оформленных гостевых пропусков."
+					},
+					"response": []
+				}
+			],
+			"description": "Кадровые процессы и пропуска в офис."
+		},
+		{
+			"name": "Dashboards & News",
+			"item": [
+				{
+					"name": "GET /dashboards/snapshots — дашборды",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/dashboards/snapshots",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboards",
+								"snapshots"
+							]
+						},
+						"description": "Срезы управленческих дашбордов."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /news/mentions — упоминания в СМИ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Max-Init-Data",
+								"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/news/mentions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"mentions"
+							]
+						},
+						"description": "Мониторинг упоминаний бренда в СМИ."
+					},
+					"response": []
+				}
+			],
+			"description": "Аналитика и мониторинг новостей."
+		},
+		{
+			"name": "Integrations",
+			"item": [
+				{
+					"name": "POST /integrations/access-control/ingest — события СКУД",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"device_id\": \"turnstile-1\",\n    \"subject_id\": \"user-123\",\n    \"direction\": \"in\",\n    \"ts\": \"2024-11-12T08:30:00Z\"\n  },\n  {\n    \"device_id\": \"turnstile-1\",\n    \"subject_id\": \"user-123\",\n    \"direction\": \"out\",\n    \"ts\": \"2024-11-12T17:45:00Z\"\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/integrations/access-control/ingest",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"integrations",
+								"access-control",
+								"ingest"
+							]
+						},
+						"description": "Приём batch-событий от системы контроля доступа."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /integrations/tracker/webhook — событие трекера",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"task-123\",\n  \"event\": \"issue.updated\",\n  \"project\": \"MAX\",\n  \"payload\": {\n    \"status\": \"in_progress\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/integrations/tracker/webhook",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"integrations",
+								"tracker",
+								"webhook"
+							]
+						},
+						"description": "Webhook от таск-трекера."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /integrations/payments/webhook — событие платежей",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"intent_id\": \"pi_123456789\",\n  \"event\": \"payment.succeeded\",\n  \"amount\": 120000,\n  \"currency\": \"RUB\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/integrations/payments/webhook",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"integrations",
+								"payments",
+								"webhook"
+							]
+						},
+						"description": "Webhook от платёжного провайдера."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /integrations/max/webhook — MaxBot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"message\",\n  \"message\": {\n    \"chat_id\": 12345,\n    \"text\": \"Привет!\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/integrations/max/webhook",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"integrations",
+								"max",
+								"webhook"
+							]
+						},
+						"description": "Webhook от чат-бота Max."
+					},
+					"response": []
+				}
+			],
+			"description": "Внешние интеграции и вебхуки (без авторизации)."
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Max-Init-Data",
+						"value": "auth_date=1762996354&hash=89cd03a4df8b204e50a80b608c9ef53c80a46c5f11b1e424cfcdd2878fae0368&chat=%7B%22id%22%3A95373502%2C%22type%22%3A%22DIALOG%22%7D&ip=176.107.246.89&user=%7B%22id%22%3A5323614%2C%22first_name%22%3A%22%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%22%2C%22last_name%22%3A%22%22%2C%22username%22%3Anull%2C%22language_code%22%3A%22ru%22%2C%22photo_url%22%3A%22https%3A%2F%2Fi.oneme.ru%2Fi%3Fr%3DBTGBPUwtwgYUeoFhO7rESmr8dFvblSvIWs8aJx_UxnU_HWgqRn-Y9NmRTud43Mjppv0%22%7D&query_id=094a23bd-67b0-486f-a106-3a71095b85cf",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://student-app-api.itc-hub.ru/api/v1/users/settings",
+					"protocol": "https",
+					"host": [
+						"student-app-api",
+						"itc-hub",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000"
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "university_id",
+			"value": "00000000-0000-0000-0000-000000000001"
+		},
+		{
+			"key": "program_id",
+			"value": "00000000-0000-0000-0000-000000000101"
+		},
+		{
+			"key": "target_program_id",
+			"value": "00000000-0000-0000-0000-000000000202"
+		},
+		{
+			"key": "open_day_event_id",
+			"value": "00000000-0000-0000-0000-000000000201"
+		},
+		{
+			"key": "project_id",
+			"value": "00000000-0000-0000-0000-000000000301"
+		},
+		{
+			"key": "vacancy_id",
+			"value": "vacancy-123"
+		},
+		{
+			"key": "event_id",
+			"value": "event-123"
+		},
+		{
+			"key": "academic_group_id",
+			"value": "CS-101"
+		},
+		{
+			"key": "teacher_id",
+			"value": "00000000-0000-0000-0000-000000000401"
+		},
+		{
+			"key": "course_id",
+			"value": "00000000-0000-0000-0000-000000000501"
+		},
+		{
+			"key": "dorm_service_id",
+			"value": "dorm-service-001"
+		},
+		{
+			"key": "library_item_id",
+			"value": "00000000-0000-0000-0000-000000000601"
+		},
+		{
+			"key": "library_loan_id",
+			"value": "00000000-0000-0000-0000-000000000701"
+		},
+		{
+			"key": "tuition_invoice_id",
+			"value": "00000000-0000-0000-0000-000000000801"
+		},
+		{
+			"key": "idempotency_key",
+			"value": "demo-idempotency-123"
+		}
+	]
+}

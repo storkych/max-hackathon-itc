@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд руководителя - Университетский бот</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-content">
+            <button class="nav-back" onclick="window.location.href='role-selection.html'">←</button>
+            <div class="nav-title">Руководитель вуза</div>
+            <div style="width: 40px;"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <div class="dashboard-title" id="adminUniversityName">Ваш вуз</div>
+            <div class="dashboard-subtitle">Панель управления</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">12,450</div>
+                <div class="stat-label">Студентов</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1,230</div>
+                <div class="stat-label">Сотрудников</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">8,920</div>
+                <div class="stat-label">В кампусе</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">156</div>
+                <div class="stat-label">Проектов</div>
+            </div>
+        </div>
+
+        <div class="menu-grid" style="margin-top: 24px;">
+            <div class="menu-item" onclick="openSection('campus-management')">
+                <div class="menu-icon">📊</div>
+                <div class="menu-content">
+                    <div class="menu-title">Управление кампусом</div>
+                    <div class="menu-description">Дашборд с информацией о студентах и сотрудниках</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('academic-metrics')">
+                <div class="menu-icon">📈</div>
+                <div class="menu-content">
+                    <div class="menu-title">Академические показатели</div>
+                    <div class="menu-description">Научные и академические метрики вуза</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+
+            <div class="menu-item" onclick="openSection('news-aggregator')">
+                <div class="menu-icon">📰</div>
+                <div class="menu-content">
+                    <div class="menu-title">Новостной агрегатор</div>
+                    <div class="menu-description">Агрегатор новостной ленты с упоминаниями о вузе</div>
+                </div>
+                <span class="menu-arrow">→</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const selectedUniversity = localStorage.getItem('selectedUniversity');
+        if (selectedUniversity) {
+            document.getElementById('adminUniversityName').textContent = selectedUniversity;
+        } else {
+            window.location.href = 'index.html';
+        }
+
+        function openSection(section) {
+            alert(`Раздел "${section}" будет реализован в следующих версиях`);
+        }
+    </script>
+</body>
+</html>
+
