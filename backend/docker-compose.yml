@@ -1,0 +1,59 @@
+services:
+  db:
+    image: postgres:16.0-alpine
+    container_name: max-student-mini-app-backend-db-postgres
+    volumes:
+      - max-student-mini-app-backend-postgres-data:/var/lib/postgresql/data/
+    env_file:
+      - .env.prod
+    ports:
+      - "5111:5432"
+    expose:
+      - "5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-U", "", "-d", "" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - max-student-mini-app-backend-django-network
+
+  web:
+    build:
+      context: .
+      dockerfile: deploy/django/Dockerfile
+    container_name: max-student-mini-app-backend-web
+    expose:
+      - "8000"
+    depends_on:
+      - db
+    env_file:
+      - .env.prod
+    volumes:
+      - max-student-mini-app-backend-static-volume:/app/static
+    networks:
+      - max-student-mini-app-backend-django-network
+
+  nginx-django-api:
+    build:
+      context: deploy/nginx
+      dockerfile: Dockerfile
+    container_name: max-student-mini-app-backend-nginx-django-api
+    ports:
+      - "8600:80"
+    depends_on:
+      - db
+      - web
+    volumes:
+      - max-student-mini-app-backend-static-volume:/home/max-student-mini-app-backend/web/static/
+    networks:
+      - max-student-mini-app-backend-django-network
+
+
+volumes:
+  max-student-mini-app-backend-postgres-data:
+  max-student-mini-app-backend-static-volume:
+
+networks:
+  max-student-mini-app-backend-django-network:
+    driver: bridge
