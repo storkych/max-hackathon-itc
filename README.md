@@ -84,6 +84,7 @@ BOT_TOKEN=test-bot-token
    VITE_API_BASE_URL=http://localhost:8000/api/v1
    VITE_API_ACCESS_TOKEN=local-demo-token
    ```
+   Если фронтенд и backend работают локально, но при этом API отдаётся через nginx на `8000`, обновите значение `DEFAULT_BASE_URL` в `frontend/app/src/api/httpClient.ts`, выставив его в `http://127.0.0.1:8000`.
 
 ## Запуск в Docker
 
@@ -106,6 +107,4 @@ cd /frontend
 docker compose up --build
 ```
 
-- Stage `builder` собирает Vite (`npm run build`).
-- Nginx слушает `5176` и проксирует статику из `dist/`.
-- Для работы с backend пропишите `VITE_API_BASE_URL=http://host.docker.internal:8600/api/v1` перед билдом (`ARG` не требуется — Vite читает `.env.production` во время `npm run build`).
+Если фронтенд и backend работают локально, но при этом API отдаётся через nginx на `8000`, обновите значение `DEFAULT_BASE_URL` в `frontend/app/src/api/httpClient.ts`, выставив его в `http://127.0.0.1:8600`.
