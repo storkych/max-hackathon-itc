@@ -48,7 +48,7 @@ function formatTime(date?: string) {
 export function OpenDayPage() {
   const { selectedUniversityId } = useAppState();
   const navigate = useNavigate();
-  const [programs, setPrograms] = useState<AdmissionsProgram[]>([]);
+  const [, setPrograms] = useState<AdmissionsProgram[]>([]);
   const [events, setEvents] = useState<OpenDayEvent[]>([]);
   const [filters, setFilters] = useState<{ cities: string[]; types: string[] }>({ cities: [], types: [] });
   const [loading, setLoading] = useState(true);

@@ -101,6 +101,14 @@ export function UniversityInfoPage() {
     .filter(([key]) => universityInfo.features?.[key as keyof typeof universityInfo.features])
     .map(([, label]) => label);
 
+  const metaLastUpdated = universityInfo.meta?.last_updated;
+  const lastUpdatedSource =
+    universityInfo.lastUpdated ??
+    (metaLastUpdated instanceof Date || typeof metaLastUpdated === 'string' || typeof metaLastUpdated === 'number'
+      ? metaLastUpdated
+      : undefined);
+  const lastUpdatedLabel = new Date(lastUpdatedSource ?? Date.now()).toLocaleDateString('ru-RU');
+
   return (
     <div className="app-container">
       <div className="container">
@@ -128,7 +136,7 @@ export function UniversityInfoPage() {
                       <MapPin size={16} />
                       {universityInfo.city ?? universityInfo.region ?? 'Город уточняется'}
                     </span>
-                    <span>Обновлено: {new Date(universityInfo.lastUpdated ?? universityInfo.meta?.last_updated ?? Date.now()).toLocaleDateString('ru-RU')}</span>
+                    <span>Обновлено: {lastUpdatedLabel}</span>
                   </div>
                 </div>
               </div>

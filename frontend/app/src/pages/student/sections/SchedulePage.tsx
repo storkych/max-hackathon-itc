@@ -138,7 +138,7 @@ export function SchedulePage() {
   const [lessons, setLessons] = useState<ScheduleLessonView[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [metaRange, setMetaRange] = useState<{ from?: string; to?: string; time_zone?: string }>({});
+  const [, setMetaRange] = useState<{ from?: string; to?: string; time_zone?: string }>({});
   const [metaGroup, setMetaGroup] = useState<{ id?: string; name?: string }>({});
   const [activeDayKey, setActiveDayKey] = useState<string>(() => getTodayKey());
   const swipeStartX = useRef<number | null>(null);

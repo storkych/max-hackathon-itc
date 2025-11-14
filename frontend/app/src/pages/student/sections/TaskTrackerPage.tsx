@@ -152,9 +152,14 @@ export function TaskTrackerPage() {
             onChange={(event) => setSearch(event.target.value)}
             disabled={loading}
           />
-          <button className="btn btn-secondary task-subscribe-btn" type="button" onClick={handleSubscribe}>
+          <button
+            className="btn btn-secondary task-subscribe-btn"
+            type="button"
+            onClick={handleSubscribe}
+            disabled={subscribing !== null}
+          >
             <BellRing size={18} />
-            Получать уведомления
+            {subscribing !== null ? 'Оформляем...' : 'Получать уведомления'}
           </button>
         </div>
         {subscribeMessage && <div className="card-description">{subscribeMessage}</div>}

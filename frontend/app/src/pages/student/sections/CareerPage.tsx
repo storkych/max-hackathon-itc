@@ -29,7 +29,21 @@ export function CareerPage() {
   const handleCareerSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
+    const getValue = (name: string) => {
+      const value = formData.get(name);
+      if (typeof value === 'string') {
+        return value;
+      }
+      if (value == null) {
+        return undefined;
+      }
+      return String(value);
+    };
+    const payload = {
+      topic: getValue('topic') ?? '',
+      subtopic: getValue('subtopic') || undefined,
+      preferred_slots: getValue('preferred_slots') || undefined,
+    };
     setCareerStatus('submitting');
     try {
       await submitCareerConsultationRequest(payload);

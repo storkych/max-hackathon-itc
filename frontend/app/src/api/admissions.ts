@@ -367,6 +367,14 @@ function mapOpenDay(raw: any): OpenDayEvent {
   };
 }
 
+function normalizeFilterStrings(source: unknown): string[] {
+  if (!Array.isArray(source)) {
+    return [];
+  }
+  const stringItems = source.filter((item): item is string => typeof item === 'string' && item.trim().length > 0);
+  return Array.from(new Set(stringItems));
+}
+
 export async function getAdmissionsUniversities(): Promise<AdmissionsUniversity[]> {
   const response = await apiFetch<ApiListResponse<any>>('/admissions/universities');
   const items = unwrapList(response);
@@ -466,8 +474,8 @@ export async function getOpenDays(universityId?: string, programId?: string): Pr
   );
   const items = Array.isArray(response?.items) ? response.items : unwrapList(response);
   const filtersPayload = response?.filters ?? {};
-  const cities = Array.isArray(filtersPayload.cities) ? Array.from(new Set(filtersPayload.cities)) : [];
-  const types = Array.isArray(filtersPayload.types) ? Array.from(new Set(filtersPayload.types)) : [];
+  const cities = normalizeFilterStrings(filtersPayload.cities);
+  const types = normalizeFilterStrings(filtersPayload.types);
   return {
     events: items.map(mapOpenDay),
     filters: { cities, types },

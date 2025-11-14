@@ -91,6 +91,7 @@ export interface TravelRequestPayload {
     amount?: number;
     currency?: string;
   }>;
+  [key: string]: unknown;
 }
 
 export interface LeaveRequestPayload {
@@ -101,6 +102,7 @@ export interface LeaveRequestPayload {
     full_name?: string;
     contacts?: string;
   };
+  [key: string]: unknown;
 }
 
 export interface GuestPassPayload {
@@ -110,6 +112,7 @@ export interface GuestPassPayload {
   visit_time_from: string;
   visit_time_to: string;
   notes?: string;
+  [key: string]: unknown;
 }
 
 function mapTravelRequest(raw: any): TravelRequest {

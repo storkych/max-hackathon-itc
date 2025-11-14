@@ -547,7 +547,7 @@ export function SettingsPage() {
                             e.preventDefault();
                             e.stopPropagation();
                           }}
-                          onTouchStart={(e) => {
+                          onTouchStart={() => {
                             // Не используем preventDefault, так как это кнопка удаления
                             removeFromSlot(slotIndex);
                           }}

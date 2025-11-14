@@ -177,7 +177,7 @@ export function AdmissionInquiryPage() {
               </button>
             </div>
             <div className="attachment-grid">
-              {attachments.map((attachment, index) => (
+              {attachments.map((attachment) => (
                 <div key={attachment.id} className="attachment-row">
                   <input
                     className="form-input"

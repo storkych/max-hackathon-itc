@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
-import { getDeaneryRequests as getDeaneryData, submitDeaneryRequest, type DeaneryRequest } from '../../../api/deanery';
+import {
+  getDeaneryRequests as getDeaneryData,
+  submitDeaneryRequest,
+  type DeaneryRequest,
+  type DeaneryRequestPayload,
+} from '../../../api/deanery';
 
 export function DeaneryPage() {
   const [requests, setRequests] = useState<DeaneryRequest[]>([]);
@@ -24,7 +29,24 @@ export function DeaneryPage() {
   const handleDeanerySubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
+    const getValue = (name: string) => {
+      const value = formData.get(name);
+      if (typeof value === 'string') {
+        return value;
+      }
+      if (value == null) {
+        return undefined;
+      }
+      return String(value);
+    };
+    const payload: DeaneryRequestPayload = {
+      type: getValue('type') ?? 'study_place',
+      description: getValue('description') || undefined,
+    };
+    const language = getValue('language');
+    if (language) {
+      payload.language = language;
+    }
     setDeaneryStatus('submitting');
     try {
       await submitDeaneryRequest(payload);

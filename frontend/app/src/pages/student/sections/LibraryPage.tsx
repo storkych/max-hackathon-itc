@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { FormEvent } from 'react';
+import type { FormEvent, ReactNode } from 'react';
 import {
   getLibraryBooks,
   getLibraryFines,
@@ -20,7 +20,7 @@ const mediaLabels: Record<string, string> = {
   article: 'Статья',
 };
 
-const mediaIcons: Record<string, JSX.Element> = {
+const mediaIcons: Record<string, ReactNode> = {
   book: <BookOpenCheck size={16} />,
   ebook: <LibrarySquare size={16} />,
   audiobook: <Headphones size={16} />,

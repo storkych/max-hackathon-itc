@@ -35,7 +35,6 @@ export interface Event {
   meta?: Record<string, unknown>;
 }
 
-type ApiResponse<T> = { data?: T };
 type ApiListResponse<T> = { data?: T[] };
 type ApiSingleResponse<T> = { data?: T };
 type ApiPaginatedResponse<T> = {
