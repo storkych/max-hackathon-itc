@@ -8,6 +8,15 @@ export interface DeaneryRequest {
   response?: string;
 }
 
+export interface DeaneryRequestPayload {
+  type: string;
+  description?: string;
+  language?: string;
+  attachments?: Array<{ name: string; url: string }>;
+  consents?: { personal_data: boolean };
+  [key: string]: unknown;
+}
+
 type ApiResponse<T> = { data?: T };
 type ApiListResponse<T> = { data?: T[] };
 
@@ -35,12 +44,7 @@ export async function getDeaneryRequests(): Promise<DeaneryRequest[]> {
   return allRequests;
 }
 
-export async function submitDeaneryRequest(payload: {
-  type: string;
-  description?: string;
-  attachments?: Array<{ name: string; url: string }>;
-  consents?: { personal_data: boolean };
-}): Promise<{ success: boolean; requestId?: string }> {
+export async function submitDeaneryRequest(payload: DeaneryRequestPayload): Promise<{ success: boolean; requestId?: string }> {
   // В зависимости от типа запроса используем разные endpoints
   let endpoint = '/deanery/certificates';
   if (payload.type === 'academic-leave' || payload.type === 'academic_leave') {
